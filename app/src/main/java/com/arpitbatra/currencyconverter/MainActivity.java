@@ -33,17 +33,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!isNetworkConnected()) {
-                    showToast("Host unreachable, check your internet connection and try again")
-           
+                    Toast.makeText(MainActivity.this, "Host unreachable, check your internet connection and try again", Toast.LENGTH_SHORT).show();
                 }
                 if (fromCurrency == toCurrency) {
-                    showToast("from and to values are same.")
-        
+                    Toast.makeText(MainActivity.this, "from and to values are same.", Toast.LENGTH_SHORT).show();
                     return;
                 } else if (fromInput.getText().toString().isEmpty()) {
-                    
-                   showToast("Please enter a value to convert.)
-           
+                    Toast.makeText(MainActivity.this, "Please enter a value to convert.", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
                     JSONFetch obj = new JSONFetch();
@@ -61,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
         // TODO: Check if connected to internet
         return true;
     }
-    
-  
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
